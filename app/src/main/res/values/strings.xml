@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Sul_Jh</string>
+    <string name="textField_money">얼마인가요?</string>
+    <string name="suffix">원</string>
 </resources>
