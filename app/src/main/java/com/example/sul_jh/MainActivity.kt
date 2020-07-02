@@ -1,11 +1,15 @@
 package com.example.sul_jh
 
-import androidx.appcompat.app.AppCompatActivity
+import android.animation.ObjectAnimator
+import android.content.Context
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.view.LayoutInflater
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -18,18 +22,17 @@ class MainActivity : AppCompatActivity() {
 
     private val textWatcher = object:TextWatcher{
         override fun afterTextChanged(s: Editable?) {
-            //TODO("Not yet implemented")
-
             val timer = Timer()
 
             timer.schedule(object:TimerTask(){
                 override fun run() {
                     runOnUiThread{
                         textView.setText(s.toString())
+                        inputLayerUpAnimation ()
                     }
                 }
-
             }, 1000)
+
         }
 
         override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
@@ -42,4 +45,24 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
+
+    private fun inputLayerUpAnimation () {
+        ObjectAnimator.ofFloat(textInputLayout, "translationY", -300f).apply {
+            duration = 500
+            start()
+        }
+    }
+
+
+    private fun layoutRiseUp(){
+        val layoutInflater:LayoutInflater = getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+
+
+    }
+
+
+    private fun layoutDropDown(){
+
+    }
+
 }
