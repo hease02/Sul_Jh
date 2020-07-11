@@ -8,53 +8,62 @@
     android:background="@color/colorWhite"
     tools:context=".MainActivity">
 
-    <LinearLayout
-        android:id="@+id/moneyLayout"
-        android:layout_width="0dp"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:paddingTop="200dp"
+        app:boxBackgroundColor="@color/colorWhite"
+
+        app:endIconDrawable="@drawable/won_small"
+        app:endIconMode="custom"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textInputLayout"
-            android:layout_width="match_parent"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInputEditText"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:paddingTop="200dp"
-            app:boxBackgroundColor="@color/colorWhite"
-            app:layout_constraintStart_toStartOf="parent"
-            app:suffixText="@string/suffix">
+            android:inputType="numberDecimal"
+            android:maxLength="8"
+            android:textSize="40sp" />
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/textInputEditText"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:inputType="numberDecimal"
-                android:maxLength="8"
-                android:textSize="45dp" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/textView"
-            android:layout_width="match_parent"
-            android:layout_height="500dp"
-            android:text="before"></com.google.android.material.textview.MaterialTextView>
-
-    </LinearLayout>
-
+    </com.google.android.material.textfield.TextInputLayout>
 
     <LinearLayout
         android:id="@+id/sulLayout"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:background="@drawable/round_corner"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="@+id/moneyLayout"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" >
 
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:menu="@menu/navigation_menu"/>
+
+    </LinearLayout>
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
