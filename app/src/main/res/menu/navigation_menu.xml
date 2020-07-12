@@ -13,10 +13,6 @@
         android:enabled="true"
         android:icon="@drawable/won_5"
         android:title="@string/menu_string_2"/>
-    <item
-        android:id="@+id/page_3"
-        android:enabled="true"
-        android:icon="@drawable/won_5"
-        android:title="@string/menu_string_3"/>
+
 
 </menu>

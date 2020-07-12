@@ -1,6 +1,7 @@
 package com.example.sul_jh
 
 import android.animation.ObjectAnimator
+import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -8,6 +9,7 @@ import android.view.View
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 
@@ -25,6 +27,38 @@ class MainActivity : AppCompatActivity() {
 
             layoutRiseUp()
         }
+
+        bottom_navigation.setOnNavigationItemSelectedListener { item ->
+            when(item.itemId) {
+            R.id.page_1 -> {
+                // Respond to navigation item 1 click
+                true
+            }
+            R.id.page_2 -> {
+                val nextIntent = Intent(this, SettingActivity::class.java)
+                startActivity(nextIntent)
+
+                true
+            }
+            else -> false
+        } }
+
+        bottom_navigation.setOnNavigationItemReselectedListener { item ->
+            when(item.itemId) {
+                R.id.page_1 -> {
+                    // Respond to navigation item 1 click
+                    true
+                }
+                R.id.page_2 -> {
+                    val nextIntent = Intent(this, SettingActivity::class.java)
+                    startActivity(nextIntent)
+
+                    true
+                }
+                else -> false
+            }
+        }
+
     }
 
     /**

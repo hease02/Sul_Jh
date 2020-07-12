@@ -3,7 +3,7 @@
     <string name="textField_money">얼마인가요?</string>
     <string name="suffix">원</string>
     <string name="content_description_end_icon">EndIcon</string>
-    <string name="menu_string_1">추가</string>
-    <string name="menu_string_2">삭제</string>제
+    <string name="menu_string_1">메인</string>
+    <string name="menu_string_2">설정</string>제
     <string name="menu_string_3">수정</string>
 </resources>
